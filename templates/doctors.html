@@ -1,0 +1,123 @@
+{% extends "index.html" %}
+
+{% block title %}Our Doctors{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<!-- Hero Section -->
+<section class="doctors-hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="doctors-title">Meet Our Expert Doctors</h1>
+                <p class="doctors-subtitle">Dedicated professionals committed to your health and well-being</p>
+                <div class="doctors-stats">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="doctors-stat-item">
+                                <h3>50+</h3>
+                                <p>Expert Doctors</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="doctors-stat-item">
+                                <h3>15+</h3>
+                                <p>Specializations</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="doctors-stat-item">
+                                <h3>25+</h3>
+                                <p>Years Experience</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="doctors-hero-image">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format" alt="Medical Team" class="img-fluid rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Doctors Grid Section -->
+<section class="doctors-grid-section">
+    <div class="container">
+        <div class="row g-4">
+            {% for i in doctors %}
+            <div class="col-md-6 col-lg-4">
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="{{ i.doc_image.url }}" alt="Dr. {{ i.doc_name }}" class="img-fluid">
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Dr. {{ i.doc_name }}</h3>
+                        <div class="doctor-specialization">
+                            <i class="fas fa-stethoscope"></i>
+                            <span>{{ i.doc_spec }}</span>
+                        </div>
+                        <div class="doctor-department">
+                            <i class="fas fa-hospital"></i>
+                            <span>{{ i.dep_name }} Department</span>
+                        </div>
+                        <div class="doctor-actions">
+                            <a href="{% url 'booking' %}" class="btn btn-primary">Book Appointment</a>
+                            <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#doctorModal{{ forloop.counter }}">
+                                View Profile
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor Modal -->
+            <div class="modal fade" id="doctorModal{{ forloop.counter }}" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Dr. {{ i.doc_name }}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="doctor-modal-content">
+                                <div class="doctor-modal-image">
+                                    <img src="{{ i.doc_image.url }}" alt="Dr. {{ i.doc_name }}" class="img-fluid rounded">
+                                </div>
+                                <div class="doctor-modal-info">
+                                    <h4>Specialization</h4>
+                                    <p>{{ i.doc_spec }}</p>
+                                    <h4>Department</h4>
+                                    <p>{{ i.dep_name }} Department</p>
+                                    <h4>Experience</h4>
+                                    <p>25+ years of experience in {{ i.doc_spec }}</p>
+                                    <h4>Education</h4>
+                                    <p>MD in {{ i.doc_spec }} from AIIMS, New Delhi</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="{% url 'booking' %}" class="btn btn-primary">Book Appointment</a>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="doctors-cta">
+    <div class="container text-center">
+        <h2>Ready to Meet Our Doctors?</h2>
+        <p class="lead mb-4">Book an appointment with our specialists today.</p>
+        <a href="{% url 'booking' %}" class="btn btn-primary btn-lg">Schedule an Appointment</a>
+    </div>
+</section>
+
+{% endblock %}
