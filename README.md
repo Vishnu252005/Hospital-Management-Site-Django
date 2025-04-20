@@ -52,8 +52,8 @@ Before you begin, ensure you have the following installed:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/06ajeesh/django-luna.git
-cd django-luna
+git clone https://github.com/Vishnu252005/Hospital-Management-Site-Django.git
+cd Hospital-Management-Site-Django
 ```
 
 ### 2. Set Up Virtual Environment
@@ -96,7 +96,7 @@ Visit `http://127.0.0.1:8000/` in your browser to see the application.
 ## 📁 Project Structure
 
 ```
-django-luna/
+Hospital-Management-Site-Django/
 ├── home/                  # Main application
 │   ├── migrations/        # Database migrations
 │   ├── templates/         # HTML templates
@@ -164,4 +164,4 @@ For support, email support@luna.com or open an issue in the repository.
 
 ---
 
-Made with ❤️ by the LUNA Team
+Made with ❤️ by [Vishnu](https://github.com/Vishnu252005)
