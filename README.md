@@ -1,4 +1,4 @@
-# Rise Hospital - Django Web Application
+# LUNA - Django Web Application
 
 A modern, responsive hospital management web application built with Django and Bootstrap. This application provides a seamless experience for patients to book appointments, view doctor profiles, and explore hospital departments.
 
@@ -52,8 +52,8 @@ Before you begin, ensure you have the following installed:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/06ajeesh/django-rise-hospital.git
-cd django-rise-hospital
+git clone https://github.com/06ajeesh/django-luna.git
+cd django-luna
 ```
 
 ### 2. Set Up Virtual Environment
@@ -96,7 +96,7 @@ Visit `http://127.0.0.1:8000/` in your browser to see the application.
 ## 📁 Project Structure
 
 ```
-django-rise-hospital/
+django-luna/
 ├── home/                  # Main application
 │   ├── migrations/        # Database migrations
 │   ├── templates/         # HTML templates
@@ -153,7 +153,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-For support, email support@risehospital.com or open an issue in the repository.
+For support, email support@luna.com or open an issue in the repository.
 
 ## 🙏 Acknowledgments
 
@@ -164,4 +164,4 @@ For support, email support@risehospital.com or open an issue in the repository.
 
 ---
 
-Made with ❤️ by the Rise Hospital Team
+Made with ❤️ by the LUNA Team
