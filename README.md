@@ -1,99 +1,167 @@
 # Rise Hospital - Django Web Application
 
-Rise Hospital is a modern web application built with Django and Bootstrap, designed to facilitate patient bookings, showcase doctor profiles, and provide detailed information about hospital departments. This web app is optimized for ease of use and a responsive design, ensuring a seamless experience across devices.
+A modern, responsive hospital management web application built with Django and Bootstrap. This application provides a seamless experience for patients to book appointments, view doctor profiles, and explore hospital departments.
 
-<img src="https://github.com/user-attachments/assets/6efff090-406c-441f-885e-eb63400f978e" width="85%" />
+## 🚀 Features
 
-## Features
+- **Patient Booking System**
+  - Easy appointment scheduling
+  - Real-time availability checking
+  - Automated confirmation emails
+  - Appointment history tracking
 
-- **Patient Bookings:** A user-friendly interface to allow patients to book appointments with doctors.
-- **Doctor Profiles:** Browse detailed profiles of doctors including their specialties, availability, and contact information.
-- **Hospital Departments:** Information on various departments within the hospital.
-- **Contact Page:** A simple contact form for inquiries and support.
+- **Doctor Profiles**
+  - Detailed professional information
+  - Specialization and expertise
+  - Availability schedules
+  - Contact information
 
-## Screenshots
+- **Department Information**
+  - Comprehensive department details
+  - Available services
+  - Specialized equipment
+  - Department-specific doctors
 
-Here are some screenshots from the application:
+- **User-Friendly Interface**
+  - Responsive design for all devices
+  - Dark mode support
+  - Intuitive navigation
+  - Modern UI/UX
 
-- **Homepage & Navigation**  
-  <img src="https://github.com/user-attachments/assets/6efff090-406c-441f-885e-eb63400f978e" width="75%" />
+## 📋 Prerequisites
 
-- **Department Profiles**  
-  <img src="https://github.com/user-attachments/assets/9f2025db-59c8-4806-9844-55a02d92b1a0" width="75%" />
+Before you begin, ensure you have the following installed:
 
-- **Doctor Profile**  
-  <img src="https://github.com/user-attachments/assets/75be136f-05dd-4d95-b5be-9e97bb8099e4" width="75%" />
-
-- **Patient Booking Page**  
-  <img src="https://github.com/user-attachments/assets/c2c51a59-0f23-4539-87d1-8ada6b3de0a8" width="75%" />
-
-- **About Page**  
-  <img src="https://github.com/user-attachments/assets/d654f0b4-fcfa-4400-aae1-6257f25e9c06" width="75%" />
-
-- **Contact Form**  
-  <img src="https://github.com/user-attachments/assets/4ba588ca-3ed3-499b-8d4b-a85c5046219c" width="75%" />
-
-
-
-## Technologies Used
-
-- **Django:** The web framework used for backend development.
-- **Bootstrap:** For responsive, mobile-first design.
-- **SQLite:** The default database for storing application data.
-
-## Installation
-
-To set up the project locally, follow these steps:
-
-### 1. Clone the Repository  
-Run the following command in your terminal:  
+- **Python 3.8 or higher**
   ```bash
-  git clone https://github.com/06ajeesh/django-rise-hospital.git
-  ```  
+  python --version
+  ```
+- **Node.js 14.x or higher** (for development tools)
+  ```bash
+  node --version
+  ```
+- **Git** (for version control)
+  ```bash
+  git --version
+  ```
+- **Virtual Environment** (recommended)
+  - Windows: `python -m venv`
+  - macOS/Linux: `python3 -m venv`
 
+## 🛠️ Installation Guide
 
+### 1. Clone the Repository
+```bash
+git clone https://github.com/06ajeesh/django-rise-hospital.git
+cd django-rise-hospital
+```
 
-### 2. Create and Activate a Virtual Environment  
-**For Windows:**  
+### 2. Set Up Virtual Environment
+
+**Windows:**
 ```bash
 python -m venv .venv
-```
-```bash
 .venv\Scripts\activate
 ```
 
-**For macOS/Linux:**  
+**macOS/Linux:**
 ```bash
 python3 -m venv .venv
-```
-```bash
 source .venv/bin/activate
 ```
 
-
-### 3. Install Dependencies  
+### 3. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Change Directory
+### 4. Database Setup
 ```bash
-cd django-rise-hospital
-```
-
-### 5. Apply Database Migrations  
-```bash
+python manage.py makemigrations
 python manage.py migrate
 ```
 
-### 6. Run the Development Server  
+### 5. Create Superuser (Optional)
+```bash
+python manage.py createsuperuser
+```
+
+### 6. Run Development Server
 ```bash
 python manage.py runserver
 ```
 
-### 7. Open the Application in Your Browser  
+Visit `http://127.0.0.1:8000/` in your browser to see the application.
+
+## 📁 Project Structure
+
 ```
-http://127.0.0.1:8000/
+django-rise-hospital/
+├── home/                  # Main application
+│   ├── migrations/        # Database migrations
+│   ├── templates/         # HTML templates
+│   ├── static/           # Static files (CSS, JS, images)
+│   └── views.py          # View logic
+├── django_tutorial/       # Project configuration
+├── templates/            # Base templates
+├── static/              # Global static files
+├── uploads/             # User uploaded files
+├── manage.py           # Django management script
+└── requirements.txt    # Project dependencies
 ```
 
-Now, your **Django Rise Hospital** web application is up and running! 🚀
+## 🔧 Configuration
+
+### Environment Variables
+Create a `.env` file in the root directory with:
+```
+DEBUG=True
+SECRET_KEY=your-secret-key
+ALLOWED_HOSTS=localhost,127.0.0.1
+```
+
+### Database Configuration
+The project uses SQLite by default. To use a different database:
+1. Update settings.py
+2. Install appropriate database adapter
+3. Update requirements.txt
+
+## 🎨 Customization
+
+### Theme Customization
+- Edit `static/css/style.css` for styling
+- Modify `templates/base.html` for layout changes
+- Update `static/js/main.js` for custom functionality
+
+### Adding New Features
+1. Create new models in `home/models.py`
+2. Add views in `home/views.py`
+3. Create templates in `templates/`
+4. Update URLs in `home/urls.py`
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📞 Support
+
+For support, email support@risehospital.com or open an issue in the repository.
+
+## 🙏 Acknowledgments
+
+- Django Framework
+- Bootstrap
+- Font Awesome
+- All contributors and supporters
+
+---
+
+Made with ❤️ by the Rise Hospital Team
